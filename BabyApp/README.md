@@ -1,38 +1,56 @@
 # BabyApp
 
-This template should help get you started developing with Vue 3 in Vite.
+BabyApp 是以 iPhone 手機版面為核心的 Vue 網頁應用程式，提供經期日曆、週期預估與集點任務。
 
-## Recommended IDE Setup
+## 功能
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **首頁**：查看集點進度與常用功能入口。
+- **集點任務**：按下蓋章按鈕累積印章，集滿 15 枚完成集點卡。
+- **經期日曆**：記錄經期開始與結束日期，查看週期進度、易受孕期、排卵日及下次經期預估。
+- **手機優先介面**：以窄版手機螢幕為主要設計尺寸，桌面瀏覽器會置中顯示手機寬度版面。
 
-## Recommended Browser Setup
+週期與排卵資訊依使用者記錄及週期長度估算，僅供個人日期追蹤參考，不作醫療判斷。
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 開發環境
 
-## Customize configuration
+- Node.js：`package.json` 指定 `^22.18.0` 或 `>=24.12.0`
+- npm
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## 安裝與啟動
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+Vite 啟動後，依終端機顯示的網址開啟本機預覽。修改程式時，開發伺服器會自動更新畫面。
+
+## 常用指令
 
 ```sh
-npm run build
+npm run dev      # 啟動本機開發伺服器
+npm run build    # 建置正式版至 dist/
+npm run preview  # 預覽正式版建置結果
 ```
+
+## 專案結構
+
+```text
+src/
+  components/    共用元件
+  composables/   共用日期與本機資料邏輯
+  router/        Vue Router 路由設定
+  views/         首頁、集點、經期日曆與介紹頁
+  assets/        全域樣式與字體
+public/          圖片與公開靜態檔案
+```
+
+頁面樣式各自放在對應的 CSS 檔案，例如 `HomeView.vue` 使用 `HomeView.css`。
+
+## 資料保存
+
+經期紀錄、週期長度與集點數保存在目前瀏覽器的 `localStorage`，不會自動同步到其他裝置或瀏覽器。清除網站資料也會刪除這些本機紀錄。
+
+## 部署
+
+此專案使用 Vue Router HTML5 History 模式。部署至靜態主機時，請設定路由回退，讓未命中的頁面路徑回傳 `index.html`；正式版檔案位於 `dist/`。
