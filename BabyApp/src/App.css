@@ -1,0 +1,157 @@
+/* 將桌面預覽限制在手機寬度，手機上則佔滿螢幕。 */
+#app {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: var(--paper);
+}
+
+/* 主畫面預留頂部與底部安全區，避免內容被系統介面遮住。 */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top);
+}
+
+/* 共用頁面留白與標題、內文的文字層級。 */
+.page {
+  flex: 1;
+  padding: 27px 24px calc(82px + env(safe-area-inset-bottom));
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+h1 {
+  margin-top: 12px;
+  color: var(--ink);
+  font-size: clamp(31px, 8vw, 38px);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 1.18;
+}
+
+.intro {
+  max-width: 320px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* 頁面之間共用的文字連結樣式與輕微回饋。 */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 23px;
+  color: var(--sage-dark);
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.text-link span {
+  font-size: 18px;
+  transition: transform 160ms ease;
+}
+
+.text-link:hover span {
+  transform: translateX(3px);
+}
+
+/* 底部導覽固定於視窗底端，並保留 iPhone 底部安全區。 */
+.tab-bar {
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 5px 24px calc(10px + env(safe-area-inset-bottom));
+  background: rgb(255 255 255 / 72%);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -8px 24px rgb(38 61 49 / 7%);
+}
+
+.tab-link {
+  display: grid;
+  min-width: 58px;
+  justify-items: center;
+  gap: 0px;
+  color: #9aa39e;
+  font-size: 11px;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+/* 三個底部導覽圖示沿用簡潔線條樣式。 */
+.tab-link img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 首頁插圖維持比例，避免裁掉角色。 */
+.tab-link img {
+  display: block;
+  object-fit: contain;
+}
+
+.tab-link.is-active {
+  color: var(--sage-dark);
+}
+
+/* 鍵盤使用者可看見目前聚焦的連結。 */
+a:focus-visible {
+  outline: 3px solid #8cb5a2;
+  outline-offset: 4px;
+}
+
+/* 螢幕寬於手機時，置中呈現手機比例的預覽框。 */
+@media (min-width: 431px) {
+  body {
+    padding: 24px 0;
+  }
+
+  #app {
+    min-height: calc(100dvh - 48px);
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 16px 60px rgb(38 61 49 / 10%);
+  }
+
+  .app-shell {
+    min-height: calc(100dvh - 48px);
+  }
+
+  .tab-bar {
+    right: auto;
+    bottom: 24px;
+    left: 50%;
+    width: 430px;
+    transform: translateX(-50%);
+    border-radius: 24px 24px 30px 30px;
+  }
+}
+
+/* 尊重系統減少動態效果的偏好。 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

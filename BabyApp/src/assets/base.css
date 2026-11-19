@@ -1,0 +1,60 @@
+/* 全站字體、底色與主題色，供所有頁面共用。 */
+:root {
+  font-family: 'Huninn', sans-serif;
+  color: #26332d;
+  background: #edf2ef;
+  font-synthesis: weight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --paper: #fff;
+  --ink: #26332d;
+  --muted: #738078;
+  --sage: #80a894;
+  --sage-dark: #567f69;
+  --mist: #f3f7f4;
+}
+
+/* 使用官方 jf open 粉圓 2.1，讓瀏覽器載入專案內的字型檔。 */
+@font-face {
+  font-family: 'Huninn';
+  src: url('./fonts/jf-openhuninn.ttf/font/jf-openhuninn-2.1.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 統一元素尺寸計算方式，避免 padding 撐開版面。 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 頁面最小寬度符合小型手機，並移除瀏覽器預設外距。 */
+body {
+  font-family: inherit;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* 關閉手機點按連結或按鈕時的系統色塊。 */
+/* 表單與按鈕預設繼承全站粉圓體，避免瀏覽器改用系統字體。 */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 選取文字時使用品牌文字色與淡綠底色。 */
+::selection {
+  color: var(--ink);
+  background: #d8e8de;
+}

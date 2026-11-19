@@ -1,0 +1,158 @@
+/* 集點頁使用柔和暖色，與首頁儀表板保持一致。 */
+.points-page {
+  background: #faf5ee;
+}
+
+.points-heading {
+  display: flex;
+  grid-template-columns: minmax(0, 1fr) 110px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.points-heading-copy {
+  min-width: 0;
+}
+
+.points-heading-copy h1{
+  margin-bottom: -5px;
+  color: #574638;
+}
+
+.points-heading-copy p{
+  color: #655648;
+}
+
+.points-heading-art {
+  width: 125px;
+  height: 125px;
+  object-fit: contain;
+}
+
+/* 集點卡面板承載印章數、15 格卡面與蓋章操作。 */
+.stamp-card-page {
+  margin-top: -12px;
+  padding: 18px 16px 16px;
+  border: 1px solid #efe2d3;
+  border-radius: 22px;
+  background: #ffefcf;
+}
+
+.stamp-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+
+.stamp-card-title-row h2 {
+  color: #624d31;
+  font-size: 22px;
+  font-weight: 650;
+  margin-top: 10px;
+}
+
+.stamp-card-title-row p {
+  margin-top: -15px;
+  color: #8a714c;
+  font-size: 19px;
+}
+
+.stamp-card-title-row strong {
+  color: #49351e;
+  font-size: 30px;
+  font-weight: 650;
+}
+
+.stamp-card-title-row img {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
+/* 五欄網格搭配固定 15 格，形成三排印章卡。 */
+.stamp-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+  padding: 13px;
+  border: 1px solid #efe2d3;
+  border-radius: 17px;
+  background: #fffaf0;
+}
+
+.stamp-cell {
+  display: grid;
+  aspect-ratio: 1;
+  min-width: 0;
+  place-items: center;
+  border: 1.5px dashed #dec99e;
+  border-radius: 50%;
+  color: #b8a88e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.stamp-cell.is-stamped {
+  border: 2px solid #e8ba37;
+  background: #f8d84f;
+  box-shadow: inset 0 0 0 3px rgb(255 255 255 / 42%);
+  color: #694f1f;
+  font-size: 13px;
+}
+
+.stamp-hint,
+.stamp-complete {
+  margin-top: 13px;
+  color: #806b4c;
+  font-size: 13px;
+  text-align: center;
+}
+
+.stamp-complete {
+  color: #567f69;
+  font-weight: 650;
+}
+
+.stamp-button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 13px;
+  border: 0;
+  border-radius: 14px;
+  background: #f6d64e;
+  color: #453719;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: transform 140ms ease, opacity 140ms ease;
+}
+
+.stamp-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.stamp-button:disabled {
+  background: #e5d9bd;
+  color: #8c806b;
+  cursor: default;
+}
+
+.stamp-notice {
+  min-height: 20px;
+  margin-top: 7px;
+  color: #6d806f;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 360px) {
+  .stamp-grid {
+    gap: 6px;
+    padding: 10px;
+  }
+}

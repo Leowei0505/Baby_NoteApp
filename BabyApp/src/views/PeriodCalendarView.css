@@ -1,0 +1,647 @@
+.period-page {
+  background: #faf5ee;
+}
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.heading-art {
+  flex: none;
+  width: 110px;
+  height: 110px;
+  margin-bottom: -10px;
+  object-fit: contain;
+}
+
+.page-heading .eyebrow {
+  margin-bottom: 5px;
+}
+
+.page-heading h1 {
+  margin-bottom: -5px;
+  color: #574638;
+}
+
+.page-heading p {
+  color: #655648;
+}
+
+.cycle-status,
+.calendar-panel {
+  margin-top: 0px;
+  padding: 16px;
+  border-radius: 18px;
+  color: #655648;
+}
+
+.cycle-status {
+  background: #fff3e5;
+  border-radius: 20px;
+}
+
+.cycle-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 124px;
+  align-items: center;
+  gap: 10px;
+}
+
+.cycle-details {
+  min-width: 0;
+}
+
+.cycle-badge {
+  display: inline-flex;
+  margin-bottom: 7px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: #ffe6b6;
+  color: #765b36;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.cycle-details h2 {
+  margin: 0;
+  color: #65503d;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.cycle-details .phase-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 7px;
+  color: #86674d;
+  font-size: 12px;
+}
+
+.detail-icon {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: #a67e4e;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.period-drop {
+  fill: #f49a90;
+  stroke: #f49a90;
+}
+
+.sprout-icon {
+  stroke: #849b6c;
+}
+
+.cycle-details .conception-level {
+  margin-top: 7px;
+}
+
+.cycle-reminder-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: 8px;
+  color: #80684f;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.cycle-reminder-line .detail-icon {
+  margin-top: 1px;
+}
+
+.cycle-ring {
+  display: grid;
+  width: 124px;
+  height: 124px;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #f29e96 0 var(--cycle-progress), #f7ded7 var(--cycle-progress) 100%);
+}
+
+.cycle-ring-inner {
+  display: flex;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fffaf5;
+  color: #80684f;
+}
+
+.cycle-ring-inner > span {
+  font-size: 11px;
+}
+
+.cycle-ring-inner strong {
+  margin-top: 2px;
+  color: #745940;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.cycle-ring-inner small {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.ring-drop {
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+  fill: #f49a90;
+}
+
+.cycle-progress-card {
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #fff;
+  color: #655648;
+}
+
+.cycle-status h2 {
+  margin: 0;
+  color: #574638;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.phase-label {
+  margin-top: 4px;
+  color: #856b4c;
+  font-size: 13px;
+}
+
+.conception-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 7.5px;
+  color: #755e43;
+  font-size: 13px;
+}
+
+.conception-level strong {
+  display: inline-grid;
+  min-width: 34px;
+  min-height: 25px;
+  place-items: center;
+  border-radius: 999px;
+  background: #ece8e2;
+  color: #756b61;
+  font-size: 12px;
+}
+
+.conception-level .level-high {
+  background: #FFB8B0;
+  color: #A63D36;
+}
+
+.conception-level .level-medium {
+  background: #FFE29A;
+  color: #9B6A16;
+}
+
+.conception-level .level-low {
+  background: #A8E6A3;
+  color: #347A46;
+}
+
+.progress-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.progress-heading h3 {
+  margin: 0;
+  color: #715a43;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.progress-heading > span {
+  color: #8c7c6d;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.cycle-track {
+  position: relative;
+  height: 15px;
+  margin: 23px 5px 30px;
+  overflow: visible;
+  border-radius: 99px;
+  background: #eee9e3;
+}
+
+.cycle-track > span {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.track-period {
+  left: 0;
+  border-radius: 99px;
+  background: #e9a9a3;
+}
+
+.track-fertile {
+  border-radius: 99px;
+  background: #f4d675;
+}
+
+.track-next-period {
+  right: 0;
+  border-radius: 99px;
+  background: #f5d9d5;
+}
+
+.track-ovulation {
+  z-index: 1;
+  width: 15px;
+  height: 15px !important;
+  transform: translateX(-50%);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #d29c4b;
+  box-shadow: 0 0 0 1px #d29c4b;
+}
+
+.track-today {
+  z-index: 2;
+  width: 2px;
+  transform: translateX(-50%);
+  background: #6c9279;
+}
+
+.track-selected {
+  z-index: 3;
+  width: 3px;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background: #67517a;
+  pointer-events: none;
+}
+
+.track-selected i {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  padding: 3px 8px;
+  transform: translateX(-50%);
+  border: 1px solid #b8a6c5;
+  border-radius: 99px;
+  background: #fff;
+  color: #67517a;
+  font-size: 10px;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.cycle-slider {
+  position: absolute;
+  z-index: 4;
+  inset: -12px 0;
+  width: 100%;
+  height: 39px;
+  margin: 0;
+  opacity: 0;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.cycle-slider:active {
+  cursor: grabbing;
+}
+
+.cycle-track:has(.cycle-slider:focus-visible) {
+  outline: 2px solid #806397;
+  outline-offset: 4px;
+}
+
+.progress-legend,
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  color: #7d6e5f;
+  font-size: 10px;
+}
+
+.progress-legend span,
+.calendar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.progress-legend i,
+.calendar-legend i {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.legend-period {
+  background: #e9a9a3;
+}
+
+.legend-period-preview {
+  border: 1px dashed #d9968e;
+  background: #fff4f1;
+}
+
+.legend-period-estimate {
+  background: #fff1ed;
+  border: 1px solid #edc4bd;
+}
+
+.legend-fertile {
+  background: #f4d675;
+}
+
+.legend-ovulation {
+  background: #9b7ab2;
+}
+
+.legend-next-period {
+  background: #e6b89c;
+}
+
+.calendar-panel {
+  margin-top: 14px;
+  padding: 14px 11px 12px;
+  background: #fff;
+}
+
+.cycle-status,
+.cycle-progress-card,
+.calendar-panel {
+  border: 1px solid #efe2d3;
+  box-shadow: 0 4px 16px rgba(104, 78, 55, 0.08);
+}
+
+.month-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 2px 10px;
+}
+
+.month-controls h2 {
+  color: #554637;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.month-controls button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #faf2e7;
+  color: #755d43;
+  font: inherit;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  justify-items: center;
+}
+
+.weekday-row {
+  padding: 5px 0;
+  color: #9b8a77;
+  font-size: 11px;
+}
+
+.date-grid {
+  row-gap: 2px;
+}
+
+.calendar-slot {
+  display: grid;
+  width: min(100%, 39px);
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.calendar-cell {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  padding: 0;
+  border: 1.5px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: #54483d;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.calendar-cell:disabled {
+  cursor: default;
+}
+
+.calendar-cell.is-period {
+  background: #f3c9c4;
+  color: #85504c;
+  font-weight: 650;
+}
+
+.calendar-cell.is-period-preview {
+  border-color: #e2aaa3;
+  background: #fff4f1;
+  color: #a66e68;
+}
+
+.calendar-cell.is-period-estimate {
+  background: #fff1ed;
+  color: #a66e68;
+}
+
+.calendar-cell.is-fertile {
+  background: #f8f0dd;
+  color: #87683a;
+}
+
+.calendar-cell.is-ovulation {
+  background: #f3dfbd;
+  color: #71502a;
+  font-weight: 700;
+}
+
+.calendar-cell.is-next-period {
+  border-color: #d4a95f;
+  color: #806036;
+}
+
+.calendar-cell.is-today {
+  border-color: #83a993;
+}
+
+.calendar-cell.is-selected {
+  box-shadow: inset 0 0 0 2px #9b7ab2;
+}
+
+.calendar-cell:focus-visible,
+.month-controls button:focus-visible,
+.period-action-button:focus-visible {
+  outline: 2px solid #806397;
+  outline-offset: 2px;
+}
+
+.day-marker {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.marker-fertile {
+  background: #f4d675;
+}
+
+.marker-ovulation {
+  background: #9b7ab2;
+}
+
+.marker-next-period {
+  background: #e6b89c;
+}
+
+.calendar-legend {
+  margin-top: 12px;
+}
+
+.calendar-actions {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.storage-notice{
+  color: #8a7460;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.period-action-button {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  border-radius: 11px;
+  background: #f6d64e;
+  color: #493a1f;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.period-action-button:disabled {
+  background: #eee9e2;
+  color: #a1988f;
+  cursor: not-allowed;
+}
+
+.estimate-disclaimer {
+  margin: 12px 3px;
+  color: #8a7b6c;
+}
+
+@media (max-width: 360px) {
+  .heading-art {
+    width: 72px;
+    height: 72px;
+  }
+
+  .cycle-details h2 {
+    font-size: 15px;
+  }
+
+  .cycle-overview {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    gap: 7px;
+  }
+
+  .cycle-ring {
+    width: 96px;
+    height: 96px;
+  }
+
+  .cycle-reminder-line {
+    font-size: 10px;
+  }
+
+  .calendar-slot {
+    width: min(100%, 36px);
+  }
+
+  .progress-legend,
+  .calendar-legend {
+    gap: 7px 9px;
+  }
+}
+
+@media (max-width: 430px) {
+  .cycle-overview {
+    grid-template-columns: minmax(0, 1fr) clamp(100px, 29vw, 124px);
+    gap: 8px;
+  }
+
+  .cycle-details h2 {
+    overflow: hidden;
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .cycle-ring {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .cycle-ring-inner strong {
+    font-size: 18px;
+  }
+
+  .cycle-ring-inner small {
+    font-size: 10px;
+  }
+
+  .cycle-reminder-line {
+    margin-top: 7px;
+    font-size: 10px;
+  }
+}

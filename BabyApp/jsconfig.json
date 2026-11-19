@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    // 將 @/ 路徑對應到 src，讓編輯器能正確追蹤檔案引用。
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
