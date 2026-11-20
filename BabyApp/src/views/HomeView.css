@@ -6,19 +6,19 @@
 
 /* 問候列將日期、主標與角色插圖收在同一個首屏區塊。 */
 .home-greeting {
-  margin: 0 3px 10px;
+  margin: 30px 3px 10px;
 }
 
 .home-date {
-  margin: 0 0 2px;
+  margin: 0 0 -20px;
   color: #75624e;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 550;
 }
 
 .home-greeting-main {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(92px, 26vw, 108px);
+  grid-template-columns: minmax(0, 1fr) clamp(104px, 29vw, 120px);
   align-items: center;
   gap: 4px;
 }
@@ -28,9 +28,9 @@
 }
 
 .home-greeting h1 {
-  margin: 1px 0 2px;
+  margin: 2px -2px 6px;
   color: #574638;
-  font-size: clamp(20px, 5.5vw, 23px);
+  font-size: clamp(22px, 6.2vw, 26px);
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.3;
@@ -40,14 +40,18 @@
 .home-greeting-copy p {
   margin: 0;
   color: #8e7963;
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.home-greeting-copy h1 {
+  font-size: 32px;
 }
 
 .home-greeting-art {
   display: block;
   width: 100%;
-  max-height: 88px;
+  max-height: 120px;
   height: auto;
   object-fit: contain;
 }
@@ -56,10 +60,10 @@
 .cycle-card {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(78px, 21vw, 88px);
+  grid-template-columns: minmax(0, 1fr) clamp(88px, 24vw, 102px);
   align-items: center;
-  gap: 0 7px;
-  padding: 10px 11px;
+  gap: 2px 9px;
+  padding: 13px 13px 12px;
   border: 1px solid #f4d8d3;
   border-radius: 20px;
   background: #ffe5e1;
@@ -72,19 +76,19 @@
   display: flex;
   grid-column: 1;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   width: fit-content;
-  padding: 4px 8px;
+  padding: 5px 10px;
   border: 1px solid rgb(233 179 167 / 42%);
   border-radius: 999px;
   color: #795b42;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 650;
 }
 
 .cycle-card-heading svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   fill: #ef9b90;
   stroke: #a66c5e;
   stroke-width: 1.4;
@@ -93,31 +97,32 @@
 .cycle-card-copy {
   grid-column: 1;
   min-width: 0;
-  padding: 6px 3px 0;
+  padding: 8px 3px 0;
 }
 
 .cycle-card-copy h2 {
   margin: 0;
   color: #5f4838;
-  font-size: clamp(17px, 4.6vw, 18.5px);
+  font-size: clamp(19px, 5.2vw, 22px);
   font-weight: 700;
   line-height: 1.35;
 }
 
 .cycle-card-copy p {
-  margin: 2px 0 0;
+  margin: 4px 0 0;
   color: #806957;
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .cycle-card-art {
   grid-column: 2;
   grid-row: 1 / span 2;
   width: 100%;
-  max-height: 80px;
+  max-height: 94px;
   height: auto;
   object-fit: contain;
+  margin-bottom: -20px;
 }
 
 .cycle-card-action {
@@ -126,19 +131,19 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 37px;
-  margin-top: 8px;
+  min-height: 43px;
+  margin-top: 11px;
   border: 1px solid rgb(238 202 194 / 60%);
   border-radius: 999px;
   background: #fffaf6;
   color: #5c4a3b;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 650;
   box-shadow: 0 3px 8px rgb(133 86 76 / 8%);
 }
 
 .cycle-card-action span {
-  font-size: 21px;
+  font-size: 23px;
   line-height: 0.8;
   transition: transform 140ms ease;
 }
@@ -151,17 +156,17 @@
 .home-summary-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 13px;
 }
 
 .summary-card {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 96px;
+  min-height: 124px;
   flex-direction: column;
-  padding: 10px;
+  padding: 12px;
   overflow: hidden;
   border: 1px solid #f0e2d5;
   border-radius: 18px;
@@ -180,17 +185,17 @@
 .summary-card-heading {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
   min-width: 0;
   color: #715b45;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 650;
 }
 
 .summary-card-heading svg {
   flex: none;
-  width: 19px;
-  height: 19px;
+  width: 21px;
+  height: 21px;
   fill: none;
   stroke: #9d743e;
   stroke-linecap: round;
@@ -201,27 +206,27 @@
 .summary-card-heading h2 {
   margin: 0;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 650;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .summary-number {
-  margin-top: 1px;
+  margin-top: 3px;
   color: #5e4936;
-  font-size: 24px;
+  font-size: 29px;
   line-height: 1.1;
 }
 
 .summary-number small {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 550;
 }
 
 .summary-progress {
   display: block;
-  height: 12px;
+  height: 14px;
   margin-top: auto;
   padding: 3px;
   overflow: hidden;
@@ -240,35 +245,35 @@
 
 .points-summary > img {
   position: absolute;
-  top: 8px;
-  right: 7px;
-  width: 43px;
-  height: 43px;
+  top: 10px;
+  right: 9px;
+  width: 51px;
+  height: 51px;
   object-fit: contain;
 }
 
 .mood-heart {
   display: grid;
-  width: 23px;
-  height: 23px;
+  width: 27px;
+  height: 27px;
   margin-left: auto;
   place-items: center;
   border-radius: 50%;
   background: #fff8f4;
   color: #ef938a;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .mood-summary-text {
-  min-height: 19px;
-  margin: 3px 0 0;
+  min-height: 22px;
+  margin: 5px 0 0;
   color: #8d7663;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .mood-action {
   display: flex;
-  min-height: 30px;
+  min-height: 36px;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -278,32 +283,32 @@
   background: #fffaf6;
   color: #634d3c;
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 650;
   cursor: pointer;
 }
 
 .mood-action span {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 0.8;
 }
 
 /* 小天地列提供更多功能入口與可操作的相簿卡片。 */
 .home-places {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .home-places-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 7px;
+  margin-bottom: 9px;
 }
 
 .home-places-heading h2 {
   margin: 0;
   color: #5b4b3d;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 650;
 }
 
@@ -313,23 +318,23 @@
   background: transparent;
   color: #826b56;
   font: inherit;
-  font-size: 11px;
+  font-size: 13px;
   cursor: pointer;
 }
 
 .more-functions span {
   margin-left: 3px;
-  font-size: 17px;
+  font-size: 19px;
   vertical-align: -1px;
 }
 
 .memory-card {
   display: flex;
   width: 100%;
-  min-height: 67px;
+  min-height: 82px;
   align-items: center;
-  gap: 9px;
-  padding: 8px 11px;
+  gap: 11px;
+  padding: 10px 13px;
   border: 1px solid #f0e3d7;
   border-radius: 18px;
   background: #fffaf6;
@@ -341,8 +346,8 @@
 
 .memory-art {
   flex: none;
-  width: 47px;
-  height: 43px;
+  width: 56px;
+  height: 51px;
   fill: #fff0d5;
   stroke: #8b6847;
   stroke-linecap: round;
@@ -357,14 +362,14 @@
 }
 
 .memory-card-copy strong {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
 }
 
 .memory-card-copy small {
   overflow: hidden;
   color: #907a65;
-  font-size: 11px;
+  font-size: 13px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -372,7 +377,7 @@
 .memory-count {
   margin-left: auto;
   color: #a08870;
-  font-size: 11px;
+  font-size: 13px;
   white-space: nowrap;
 }
 
@@ -642,19 +647,19 @@
 
 @media (max-width: 360px) {
   .home-greeting-main {
-    grid-template-columns: minmax(0, 1fr) 88px;
+    grid-template-columns: minmax(0, 1fr) 96px;
   }
 
   .home-greeting h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .cycle-card {
-    grid-template-columns: minmax(0, 1fr) 76px;
+    grid-template-columns: minmax(0, 1fr) 84px;
   }
 
   .summary-card {
-    padding: 8px;
+    padding: 10px;
   }
 }
 

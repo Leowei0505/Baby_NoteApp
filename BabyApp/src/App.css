@@ -38,7 +38,7 @@
 /* 路由頁面保留自己的內容與內距，不再建立巢狀捲動區。 */
 .page {
   min-height: 100%;
-  padding: 16px 18px calc(108px + env(safe-area-inset-bottom));
+  padding: 10px 12px calc(108px + env(safe-area-inset-bottom));
 }
 
 /* 首頁與集點頁內容較短，保留一段可觸控捲動距離。 */
@@ -49,25 +49,25 @@
 
 .eyebrow {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 h1 {
-  margin-top: 12px;
+  margin: 2px 0 5px;
   color: var(--ink);
-  font-size: clamp(31px, 8vw, 38px);
+  font-size: clamp(22px, 6.2vw, 26px);
   font-weight: 650;
-  letter-spacing: -0.055em;
-  line-height: 1.18;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
 }
 
 .intro {
   max-width: 320px;
-  margin-top: 14px;
+  margin-top: 10px;
   color: var(--muted);
-  font-size: 15px;
-  line-height: 1.75;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 /* 頁面之間共用的文字連結樣式與輕微回饋。 */

@@ -5,7 +5,7 @@
       <p class="home-date">{{ todayLabel }}</p>
       <div class="home-greeting-main">
         <div class="home-greeting-copy">
-          <h1>今天過得好嗎？♡</h1>
+          <h1>今天過得好嗎~ ♡</h1>
           <p>和烏薩奇一起記錄每一天！</p>
         </div>
         <img class="home-greeting-art" src="/5.png" alt="" aria-hidden="true" />
@@ -22,7 +22,7 @@
         <h2>{{ latestPeriod ? `週期第 ${cycleDay} 天` : '尚未開始記錄' }}</h2>
         <p>{{ latestPeriod ? '點開日曆查看週期進度 ♡' : '記錄第一次經期，開始了解自己的週期 ♡' }}</p>
       </div>
-      <img class="cycle-card-art" src="/6.png" alt="" aria-hidden="true" />
+      <img class="cycle-card-art" src="/4.png" alt="" aria-hidden="true" />
       <span class="cycle-card-action">{{ latestPeriod ? '查看經期日曆' : '開始記錄經期' }}<span aria-hidden="true">›</span></span>
     </RouterLink>
 

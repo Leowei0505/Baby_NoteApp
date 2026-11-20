@@ -32,10 +32,10 @@
         </div>
       </div>
 
-      <p v-if="full" class="stamp-complete" role="status">集滿 15 枚印章，完成囉！</p>
+      <p v-if="full" class="stamp-complete" role="status">集滿 15 枚印章，完成囉！可以開始新一張了。</p>
       <p v-else class="stamp-hint">按下按鈕，就能再蓋上一個章。</p>
-      <button class="stamp-button" type="button" :disabled="full" @click="stampOnce">
-        {{ full ? '已集滿' : '蓋一個章' }}
+      <button class="stamp-button" type="button" @click="handleStampAction">
+        {{ full ? '開始新一張' : '蓋一個章' }}
       </button>
       <p class="stamp-notice" role="status" aria-live="polite">{{ notice }}</p>
     </section>
@@ -44,7 +44,7 @@
 
 <script setup>
 import { computed, ref } from 'vue'
-import { addStamp, babyAppData } from '../composables/useBabyAppData'
+import { addStamp, babyAppData, startNewStampCard } from '../composables/useBabyAppData'
 
 // 集點卡固定 15 格，每次按鈕操作新增一枚印章。
 const stamps = computed(() => Array.from({ length: 15 }, (_, index) => index < babyAppData.stamps))
@@ -55,6 +55,16 @@ function stampOnce() {
   const result = addStamp()
   if (!result.added) return
   notice.value = result.saved ? '已蓋上一個印章。' : '已暫時更新，但瀏覽器無法保存資料。'
+}
+
+function handleStampAction() {
+  if (!full.value) {
+    stampOnce()
+    return
+  }
+
+  const result = startNewStampCard()
+  if (result.reset) notice.value = result.saved ? '新的一張集點卡開始囉！' : '新卡已開始，但瀏覽器無法保存資料。'
 }
 </script>
 

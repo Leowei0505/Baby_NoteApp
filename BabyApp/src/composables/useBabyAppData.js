@@ -109,3 +109,9 @@ export function addStamp() {
   babyAppData.stamps += 1
   return { added: true, saved: persistData() }
 }
+
+export function startNewStampCard() {
+  if (babyAppData.stamps < 15) return { reset: false, saved: true }
+  babyAppData.stamps = 0
+  return { reset: true, saved: persistData() }
+}
