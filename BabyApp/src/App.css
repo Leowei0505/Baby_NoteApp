@@ -41,6 +41,12 @@
   padding: 22px 18px calc(124px + env(safe-area-inset-bottom));
 }
 
+/* 首頁與集點頁內容較短，保留一段可觸控捲動距離。 */
+.home-page,
+.points-page {
+  min-height: calc(100% + 72px);
+}
+
 .eyebrow {
   color: var(--muted);
   font-size: 13px;
