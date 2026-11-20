@@ -8,6 +8,7 @@
   grid-template-columns: minmax(0, 1fr) 110px;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 10%;
 }
 
 .points-heading-copy {
@@ -156,3 +157,4 @@
     padding: 10px;
   }
 }
+
