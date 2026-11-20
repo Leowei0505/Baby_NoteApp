@@ -35,7 +35,6 @@
 html {
   height: 100%;
   overflow: hidden;
-  overscroll-behavior-y: none;
 }
 
 /* 頁面最小寬度符合小型手機，並移除瀏覽器預設外距。 */
@@ -46,7 +45,6 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow: hidden;
-  overscroll-behavior-y: none;
   background: #faf5ee;
 }
 
