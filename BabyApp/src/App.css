@@ -21,19 +21,24 @@
   background: #faf5ee;
 }
 
-/* 頁面內容在 App 內獨立捲動，底部導覽保持固定可操作。 */
-.page {
+/* 所有路由共用此觸控捲動區，底部導覽固定在捲動區外。 */
+.page-scroll {
   flex: 1 1 auto;
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 22px 18px calc(92px + env(safe-area-inset-bottom));
 }
 
-.page::-webkit-scrollbar {
+.page-scroll::-webkit-scrollbar {
   display: none;
+}
+
+/* 路由頁面保留自己的內容與內距，不再建立巢狀捲動區。 */
+.page {
+  min-height: 100%;
+  padding: 22px 18px calc(124px + env(safe-area-inset-bottom));
 }
 
 .eyebrow {
@@ -80,24 +85,24 @@ h1 {
   transform: translateX(3px);
 }
 
-/* 底部導覽作為 App 的固定分頁列，並保留 iPhone 底部安全區。 */
+/* 半透明懸浮分頁列貼近 App 底部，保留 iPhone 手勢安全區。 */
 .tab-bar {
   position: absolute;
   z-index: 2;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  right: 14px;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  left: 14px;
   display: grid;
   flex: 0 0 auto;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4px;
-  padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
-  border-top: 1px solid #f0e6da;
-  border-radius: 22px 22px 0 0;
-  background: rgb(255 255 255 / 82%);
-  box-shadow: 0 -5px 18px rgb(72 54 37 / 7%);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+  gap: 6px;
+  padding: 7px;
+  border: 1px solid rgb(255 255 255 / 88%);
+  border-radius: 28px;
+  background: rgb(255 252 247 / 82%);
+  box-shadow: 0 8px 28px rgb(91 68 45 / 16%), inset 0 1px 0 rgb(255 255 255 / 78%);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  backdrop-filter: blur(20px) saturate(1.2);
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
@@ -106,11 +111,11 @@ h1 {
 .tab-link {
   display: grid;
   min-width: 0;
-  min-height: 52px;
+  min-height: 60px;
   align-content: center;
   justify-items: center;
   gap: 1px;
-  border-radius: 15px;
+  border-radius: 22px;
   color: #9aa39e;
   font-size: 11px;
   font-weight: 550;
@@ -133,7 +138,8 @@ h1 {
 
 .tab-link.is-active {
   color: var(--sage-dark);
-  background: #f6f1e9;
+  background: rgb(246 241 233 / 92%);
+  box-shadow: inset 0 0 0 1px rgb(239 226 211 / 62%);
 }
 
 .tab-link:active {

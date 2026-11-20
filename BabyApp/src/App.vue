@@ -6,8 +6,10 @@ import { RouterLink, RouterView } from 'vue-router'
   <!-- 全域版型：品牌列、目前路由頁面與底部分頁導覽。 -->
   <div class="app-shell">
     
-    <!-- Router 會依網址在此切換首頁或關於頁。 -->
-    <RouterView />
+    <!-- 所有路由共用可捲動區域，讓每一頁都能在固定導覽上方捲動。 -->
+    <div class="page-scroll">
+      <RouterView />
+    </div>
 
     <!-- 固定在畫面底部的主要頁面導覽。 -->
     <nav class="tab-bar" aria-label="主要導覽">
