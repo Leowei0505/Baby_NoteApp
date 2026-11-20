@@ -38,7 +38,7 @@
 /* 路由頁面保留自己的內容與內距，不再建立巢狀捲動區。 */
 .page {
   min-height: 100%;
-  padding: 22px 18px calc(124px + env(safe-area-inset-bottom));
+  padding: 16px 18px calc(108px + env(safe-area-inset-bottom));
 }
 
 /* 首頁與集點頁內容較短，保留一段可觸控捲動距離。 */

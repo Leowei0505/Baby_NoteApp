@@ -1,6 +1,6 @@
 /* 首頁使用緊湊的手機卡片節奏，保留底部懸浮導覽的安全留白。 */
 .home-page {
-  padding: 17px 12px calc(124px + env(safe-area-inset-bottom));
+  padding: 10px 12px calc(108px + env(safe-area-inset-bottom));
   background: #faf5ee;
 }
 
@@ -10,6 +10,7 @@
 }
 
 .home-date {
+  margin: 0 0 2px;
   color: #75624e;
   font-size: 12px;
   font-weight: 550;
@@ -17,7 +18,7 @@
 
 .home-greeting-main {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 112px;
+  grid-template-columns: minmax(0, 1fr) clamp(92px, 26vw, 108px);
   align-items: center;
   gap: 4px;
 }
@@ -29,7 +30,7 @@
 .home-greeting h1 {
   margin: 1px 0 2px;
   color: #574638;
-  font-size: clamp(21px, 6.2vw, 25px);
+  font-size: clamp(20px, 5.5vw, 23px);
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.3;
@@ -37,6 +38,7 @@
 }
 
 .home-greeting-copy p {
+  margin: 0;
   color: #8e7963;
   font-size: 12px;
   line-height: 1.4;
@@ -44,8 +46,9 @@
 
 .home-greeting-art {
   display: block;
-  width: 108px;
-  height: 91px;
+  width: 100%;
+  max-height: 88px;
+  height: auto;
   object-fit: contain;
 }
 
@@ -53,10 +56,10 @@
 .cycle-card {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 92px;
+  grid-template-columns: minmax(0, 1fr) clamp(78px, 21vw, 88px);
   align-items: center;
   gap: 0 7px;
-  padding: 12px 12px 11px;
+  padding: 10px 11px;
   border: 1px solid #f4d8d3;
   border-radius: 20px;
   background: #ffe5e1;
@@ -94,14 +97,15 @@
 }
 
 .cycle-card-copy h2 {
+  margin: 0;
   color: #5f4838;
-  font-size: 19px;
+  font-size: clamp(17px, 4.6vw, 18.5px);
   font-weight: 700;
   line-height: 1.35;
 }
 
 .cycle-card-copy p {
-  margin-top: 2px;
+  margin: 2px 0 0;
   color: #806957;
   font-size: 11px;
   line-height: 1.45;
@@ -110,8 +114,9 @@
 .cycle-card-art {
   grid-column: 2;
   grid-row: 1 / span 2;
-  width: 92px;
-  height: 84px;
+  width: 100%;
+  max-height: 80px;
+  height: auto;
   object-fit: contain;
 }
 
@@ -154,7 +159,7 @@
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 102px;
+  min-height: 96px;
   flex-direction: column;
   padding: 10px;
   overflow: hidden;
@@ -194,6 +199,7 @@
 }
 
 .summary-card-heading h2 {
+  margin: 0;
   overflow: hidden;
   font-size: 12px;
   font-weight: 650;
@@ -255,7 +261,7 @@
 
 .mood-summary-text {
   min-height: 19px;
-  margin-top: 3px;
+  margin: 3px 0 0;
   color: #8d7663;
   font-size: 11px;
 }
@@ -295,6 +301,7 @@
 }
 
 .home-places-heading h2 {
+  margin: 0;
   color: #5b4b3d;
   font-size: 14px;
   font-weight: 650;
@@ -635,12 +642,7 @@
 
 @media (max-width: 360px) {
   .home-greeting-main {
-    grid-template-columns: minmax(0, 1fr) 95px;
-  }
-
-  .home-greeting-art {
-    width: 94px;
-    height: 80px;
+    grid-template-columns: minmax(0, 1fr) 88px;
   }
 
   .home-greeting h1 {
@@ -648,11 +650,7 @@
   }
 
   .cycle-card {
-    grid-template-columns: minmax(0, 1fr) 80px;
-  }
-
-  .cycle-card-art {
-    width: 80px;
+    grid-template-columns: minmax(0, 1fr) 76px;
   }
 
   .summary-card {

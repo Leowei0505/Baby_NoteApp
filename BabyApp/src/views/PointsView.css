@@ -1,14 +1,15 @@
 /* 集點頁使用柔和暖色，與首頁儀表板保持一致。 */
 .points-page {
+  padding-top: 12px;
   background: #faf5ee;
 }
 
 .points-heading {
   display: flex;
-  grid-template-columns: minmax(0, 1fr) 110px;
   align-items: center;
-  justify-content: space-evenly;
-  margin-top: 10%;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 0;
 }
 
 .points-heading-copy {
@@ -16,17 +17,22 @@
 }
 
 .points-heading-copy h1{
+  margin-top: 0;
+  font-size: clamp(27px, 7vw, 30px);
   margin-bottom: -5px;
   color: #574638;
 }
 
 .points-heading-copy p{
+  margin: 0;
   color: #655648;
 }
 
 .points-heading-art {
-  width: 125px;
-  height: 125px;
+  flex: 0 0 clamp(88px, 25vw, 104px);
+  width: clamp(88px, 25vw, 104px);
+  height: auto;
+  max-height: 104px;
   object-fit: contain;
 }
 

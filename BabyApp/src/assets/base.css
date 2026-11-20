@@ -3,6 +3,8 @@
   font-family: 'Huninn', sans-serif;
   color: #26332d;
   background: #faf5ee;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   font-synthesis: weight;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -42,7 +44,6 @@ body {
   font-family: inherit;
   height: 100%;
   min-width: 320px;
-  min-height: 100vh;
   margin: 0;
   overflow: hidden;
   background: #faf5ee;
