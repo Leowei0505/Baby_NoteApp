@@ -2,7 +2,7 @@
 :root {
   font-family: 'Huninn', sans-serif;
   color: #26332d;
-  background: #edf2ef;
+  background: #faf5ee;
   font-synthesis: weight;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,12 +31,23 @@
   box-sizing: border-box;
 }
 
+/* 固定根視窗，讓內容只在 App 頁面區域捲動。 */
+html {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior-y: none;
+}
+
 /* 頁面最小寬度符合小型手機，並移除瀏覽器預設外距。 */
 body {
   font-family: inherit;
+  height: 100%;
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  overflow: hidden;
+  overscroll-behavior-y: none;
+  background: #faf5ee;
 }
 
 /* 關閉手機點按連結或按鈕時的系統色塊。 */
