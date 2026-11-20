@@ -1,6 +1,6 @@
 /* 首頁採用參考圖的暖色底與緊湊手機留白。 */
 .home-page {
-  padding: 22px 16px calc(82px + env(safe-area-inset-bottom));
+  padding: 22px 16px 24px;
   background: #faf5ee;
 }
 
