@@ -1,11 +1,12 @@
 /* 首頁採用參考圖的暖色底與緊湊手機留白。 */
 .home-page {
-  padding: 22px 16px 24px;
+  padding: 22px 16px calc(92px + env(safe-area-inset-bottom));
   background: #faf5ee;
 }
 
 /* 問候文字與角色插圖在小螢幕保持左右並排。 */
 .home-greeting {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 48%);
   align-items: center;
