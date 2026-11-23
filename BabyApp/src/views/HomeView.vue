@@ -42,12 +42,12 @@
 
       <section class="summary-card mood-summary" aria-labelledby="mood-card-title">
         <div class="summary-card-heading">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M8.5 14s1.1 2 3.5 2 3.5-2 3.5-2m-6-4h.01M14.5 10h.01" /></svg>
-          <h2 id="mood-card-title">今天的心情</h2>
-          <span class="mood-heart" aria-hidden="true">♡</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3" /><path d="m8 9 1.5 1.5L12 8m-4 7 1.5 1.5L12 14m2-5h3m-3 6h3" /></svg>
+          <h2 id="mood-card-title">任務</h2>
+          <span class="mood-heart" aria-hidden="true">✓</span>
         </div>
-        <p class="mood-summary-text">{{ todayMood ? `${moodById[todayMood]?.emoji} ${moodById[todayMood]?.label}` : '還沒有記錄' }}</p>
-        <button class="mood-action" type="button" @click="openSheet('mood')">{{ todayMood ? '重新記錄' : '去記錄' }}<span aria-hidden="true">›</span></button>
+        <p class="mood-summary-text">{{ pendingTaskCount ? `還有 ${pendingTaskCount} 項待完成` : '還沒有待完成任務' }}</p>
+        <RouterLink class="mood-action" to="/tasks">前往任務<span aria-hidden="true">›</span></RouterLink>
       </section>
     </section>
 
@@ -109,6 +109,7 @@
           <div class="more-actions">
             <RouterLink to="/calendar" @click="closeSheet">經期日曆 <span aria-hidden="true">›</span></RouterLink>
             <RouterLink to="/points" @click="closeSheet">集點任務 <span aria-hidden="true">›</span></RouterLink>
+            <button type="button" @click="openSheet('mood')">記錄今天的心情 <span aria-hidden="true">›</span></button>
             <button type="button" @click="openSheet('album')">回憶相簿 <span aria-hidden="true">›</span></button>
             <RouterLink to="/about" @click="closeSheet">認識 BabyApp <span aria-hidden="true">›</span></RouterLink>
           </div>
@@ -175,6 +176,7 @@ function persistJournal(nextJournal) {
 }
 
 const stampProgress = computed(() => Math.round((babyAppData.stamps / 15) * 100))
+const pendingTaskCount = computed(() => babyAppData.tasks.filter((task) => !task.completed).length)
 const todayMood = computed(() => homeJournal.moods[todayKey] || '')
 const latestPeriod = computed(() => babyAppData.periods
   .filter((period) => period.startDate <= todayKey)

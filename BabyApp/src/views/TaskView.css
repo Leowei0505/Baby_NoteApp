@@ -1,0 +1,257 @@
+.tasks-page {
+  min-height: calc(100% + 72px);
+  padding-top: 20px;
+  background: #faf5ee;
+}
+
+.tasks-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 35px 5px 18px;
+}
+
+.tasks-heading .eyebrow {
+  margin: 0 0 2px;
+}
+
+.tasks-heading h1 {
+  margin: 0;
+  color: #574638;
+  font-size: clamp(28px, 7vw, 34px);
+}
+
+.tasks-heading img {
+  flex: 0 0 84px;
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+}
+
+.task-composer,
+.task-section {
+  padding: 16px;
+  border: 1px solid #efe2d3;
+  border-radius: 20px;
+  background: #fffaf5;
+  box-shadow: 0 5px 16px rgb(91 68 45 / 7%);
+}
+
+.task-composer {
+  background: #ffefcf;
+}
+
+.task-composer label {
+  display: block;
+  margin-bottom: 9px;
+  color: #70573b;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.task-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.task-input-row input {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid #ead8bd;
+  border-radius: 14px;
+  outline-color: #d7aa57;
+  background: #fffdf9;
+  color: #5e4b3b;
+  font-size: 15px;
+}
+
+.task-input-row input::placeholder {
+  color: #aa9880;
+}
+
+.task-add-button {
+  flex: 0 0 46px;
+  min-height: 46px;
+  border: 0;
+  border-radius: 14px;
+  background: #f6d64e;
+  color: #5a431f;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.task-notice {
+  margin: 10px 4px 0;
+  color: #785e40;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.task-notice a {
+  display: inline-block;
+  margin-left: 5px;
+  color: #8c6630;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.task-section {
+  margin-top: 14px;
+}
+
+.task-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.task-section-heading h2 {
+  margin: 0;
+  color: #5d4938;
+  font-size: 19px;
+}
+
+.task-section-heading > span {
+  color: #99816a;
+  font-size: 13px;
+}
+
+.task-empty {
+  margin: 0;
+  padding: 15px 11px;
+  border-radius: 14px;
+  background: #fff2e5;
+  color: #8b7763;
+  font-size: 14px;
+  text-align: center;
+}
+
+.task-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+  padding: 10px;
+  border: 1px solid #f0e6db;
+  border-radius: 15px;
+  background: #fff;
+  color: #624f3e;
+}
+
+.task-status-dot,
+.task-status-check {
+  display: grid;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.task-status-dot {
+  border: 1.5px solid #e7ba68;
+  background: #fff7e8;
+}
+
+.task-status-check {
+  background: #e5f0e8;
+  color: #567f69;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.task-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.task-complete-button {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 12px;
+  background: #f6d64e;
+  color: #5b4624;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.task-delete-button {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #a2856c;
+  font: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.task-delete-button:active {
+  background: #f8eee4;
+}
+
+.completed-section {
+  background: #fff7f1;
+}
+
+.task-item.is-completed .task-title {
+  color: #958574;
+  text-decoration: line-through;
+  text-decoration-color: #c8b7a4;
+}
+
+.task-stamp-badge {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #fff0c8;
+  color: #8b6930;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.tasks-page :focus-visible {
+  outline: 3px solid #bd9054;
+  outline-offset: 3px;
+}
+
+@media (max-width: 360px) {
+  .tasks-page {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .task-item {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .task-complete-button {
+    padding: 0 8px;
+  }
+}

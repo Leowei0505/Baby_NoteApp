@@ -32,29 +32,37 @@
         </div>
       </div>
 
+      <p class="pending-stamps">待蓋章 <strong>{{ babyAppData.pendingStamps }}</strong> 枚</p>
       <p v-if="full" class="stamp-complete" role="status">集滿 15 枚印章，完成囉！可以開始新一張了。</p>
-      <p v-else class="stamp-hint">按下按鈕，就能再蓋上一個章。</p>
-      <button class="stamp-button" type="button" @click="handleStampAction">
+      <p v-else class="stamp-hint">{{ babyAppData.pendingStamps ? '按下按鈕，把獲得的章蓋到卡上。' : '完成任務後，就能獲得一枚待蓋章。' }}</p>
+      <button class="stamp-button" type="button" :disabled="!full && !babyAppData.pendingStamps" @click="handleStampAction">
         {{ full ? '開始新一張' : '蓋一個章' }}
       </button>
       <p class="stamp-notice" role="status" aria-live="polite">{{ notice }}</p>
     </section>
+
+    <RouterLink class="rewards-entry" to="/rewards">
+      <span class="rewards-entry-icon" aria-hidden="true">🎟</span>
+      <span><strong>獎勵商店</strong><small>可用兌換券 {{ babyAppData.vouchers }} 張</small></span>
+      <span class="rewards-entry-arrow" aria-hidden="true">›</span>
+    </RouterLink>
   </main>
 </template>
 
 <script setup>
 import { computed, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import { addStamp, babyAppData, startNewStampCard } from '../composables/useBabyAppData'
 
-// 集點卡固定 15 格，每次按鈕操作新增一枚印章。
+// 集點卡固定 15 格，每次蓋章消耗一枚完成任務獲得的待蓋章。
 const stamps = computed(() => Array.from({ length: 15 }, (_, index) => index < babyAppData.stamps))
 const full = computed(() => babyAppData.stamps >= 15)
 const notice = ref('')
 
 function stampOnce() {
   const result = addStamp()
-  if (!result.added) return
-  notice.value = result.saved ? '已蓋上一個印章。' : '已暫時更新，但瀏覽器無法保存資料。'
+  notice.value = result.voucherIssued ? '集滿 15 章！獲得一張兌換券。'
+    : result.added ? '已蓋上一個印章。' : '目前無法保存印章，請再試一次。'
 }
 
 function handleStampAction() {

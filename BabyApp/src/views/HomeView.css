@@ -286,6 +286,7 @@
   font-size: 14px;
   font-weight: 650;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .mood-action span {

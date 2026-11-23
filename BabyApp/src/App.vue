@@ -35,6 +35,10 @@ function preventImageDrag(event) {
         <img src="/3.png" alt="" aria-hidden="true" />
         <span>集點</span>
       </RouterLink>
+      <RouterLink class="tab-link" to="/tasks" active-class="is-active">
+        <img src="/4.png" alt="" aria-hidden="true" />
+        <span>任務</span>
+      </RouterLink>
       <RouterLink class="tab-link" to="/calendar" active-class="is-active">
         <img src="/1.png" alt="" aria-hidden="true" />
         <span>日曆</span>

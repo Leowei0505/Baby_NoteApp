@@ -19,6 +19,17 @@ const router = createRouter({
       component: () => import('../views/PointsView.vue'),
     },
     {
+      path: '/rewards',
+      name: 'rewards',
+      component: () => import('../views/RewardsView.vue'),
+    },
+    {
+      // 任務頁與集點卡共用本機印章資料。
+      path: '/tasks',
+      name: 'tasks',
+      component: () => import('../views/TaskView.vue'),
+    },
+    {
       // 經期日曆與紀錄只保存在目前瀏覽器。
       path: '/calendar',
       name: 'calendar',
