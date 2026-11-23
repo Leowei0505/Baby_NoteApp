@@ -51,18 +51,18 @@
       </section>
     </section>
 
-    <!-- 回憶相簿入口與更多功能按鈕都有明確的點擊行為。 -->
+    <!-- 獎勵商店入口與更多功能按鈕都有明確的點擊行為。 -->
     <section class="home-places" aria-labelledby="home-places-title">
       <div class="home-places-heading">
         <h2 id="home-places-title">我的小天地</h2>
         <button class="more-functions" type="button" @click="openSheet('more')">更多功能 <span aria-hidden="true">›</span></button>
       </div>
-      <button class="memory-card" type="button" @click="openSheet('album')">
-        <svg class="memory-art" viewBox="0 0 54 48" aria-hidden="true"><rect x="7" y="9" width="28" height="30" rx="3" transform="rotate(-12 7 9)" /><rect x="18" y="5" width="28" height="30" rx="3" transform="rotate(8 18 5)" /><path d="m22 27 7-7 6 5 4-4 5 8H22Z" /><circle cx="31" cy="14" r="2.4" /></svg>
-        <span class="memory-card-copy"><strong>回憶相簿</strong><small>收藏生活裡的小幸福 ♡</small></span>
-        <span class="memory-count">{{ homeJournal.memories.length }}<small>則</small></span>
+      <RouterLink class="memory-card" to="/rewards">
+        <svg class="memory-art" viewBox="0 0 54 48" aria-hidden="true"><path d="M7 9h40v9a5 5 0 0 0 0 10v9H7v-9a5 5 0 0 0 0-10V9Z" /><path d="M27 9v28" stroke-dasharray="3 3" /><path d="m15 23 3 3 6-7" /></svg>
+        <span class="memory-card-copy"><strong>獎勵商店</strong><small>用兌換券換一份小獎勵 ♡</small></span>
+        <span class="memory-count">{{ babyAppData.vouchers }}<small>張券</small></span>
         <span class="memory-arrow" aria-hidden="true">›</span>
-      </button>
+      </RouterLink>
     </section>
   </main>
 
