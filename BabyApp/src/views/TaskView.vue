@@ -2,10 +2,10 @@
   <main class="page tasks-page">
     <header class="tasks-heading">
       <div>
-        <p class="eyebrow">完成一個小目標，收下一枚印章 ♡</p>
         <h1>任務</h1>
+        <p class="eyebrow">完成一個小目標，收下一枚印章 ♡</p>
       </div>
-      <img src="/4.png" alt="" aria-hidden="true" />
+      <img src="/6.png" alt="" aria-hidden="true" />
     </header>
 
     <form class="task-composer" @submit.prevent="addNewTask">

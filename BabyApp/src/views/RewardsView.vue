@@ -2,10 +2,10 @@
   <main class="page rewards-page">
     <header class="rewards-heading">
       <div>
-        <p class="eyebrow">每集滿一張卡，送自己一份小獎勵 ♡</p>
         <h1>獎勵商店</h1>
+        <p class="eyebrow">每集滿一張卡，送自己一份小獎勵 ♡</p>
       </div>
-      <img src="/7.png" alt="" aria-hidden="true" />
+      <img src="/9.png" alt="" aria-hidden="true" />
     </header>
 
     <section class="voucher-card" aria-label="可用兌換券">
